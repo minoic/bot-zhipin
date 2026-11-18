@@ -1,0 +1,29 @@
+﻿services:
+  paper:
+    platform: linux/amd64
+    image: itzg/minecraft-server:java25@sha256:acd55b2e4429b93e5ffb626ac58108d9c3272b89d06f5318e861a298e9c79f09
+    container_name: bot-zhipin-paper
+    restart: unless-stopped
+    ports:
+      - '127.0.0.1:25565:25565'
+    environment:
+      EULA: 'TRUE'
+      TYPE: PAPER
+      VERSION: '26.1.2'
+      PAPERBUILD: '74'
+      ONLINE_MODE: 'FALSE'
+      SEED: '261026'
+      MOTD: 'bot-zhipin local protocol test'
+      MAX_PLAYERS: '5'
+      MEMORY: '2G'
+      USE_AIKAR_FLAGS: 'true'
+    volumes:
+      - ./server-data:/data
+    mem_limit: 3g
+    cpus: 2.0
+    healthcheck:
+      test: ['CMD-SHELL', 'mc-health']
+      interval: 15s
+      timeout: 5s
+      retries: 20
+      start_period: 90s

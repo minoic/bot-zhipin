@@ -1,0 +1,4 @@
+﻿packages: []
+onlyBuiltDependencies:
+  # The pinned MCP server runs its TypeScript build in the Git dependency prepare step.
+  - minecraft-mcp-server

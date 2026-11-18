@@ -1,0 +1,10 @@
+﻿node_modules/
+.npm-cache/
+.env
+.env.*
+!.env.example
+server-data/
+.codex
+.pnpm-store/
+.tools/
+.data/

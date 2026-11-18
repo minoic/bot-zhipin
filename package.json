@@ -1,0 +1,37 @@
+{
+  "name": "minecraft-bot-zhipin",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "packageManager": "pnpm@10.28.2",
+  "scripts": {
+    "format": "prettier --write \"apps/**/*.{ts,js,mjs}\" \"packages/**/*.{ts,js,mjs}\" \"scripts/**/*.{ts,js,mjs}\" \"tests/**/*.{ts,js,mjs}\" \"docs/**/*.md\" \"*.{ts,js,mjs,json,yaml,yml}\"",
+    "format:check": "prettier --check \"apps/**/*.{ts,js,mjs}\" \"packages/**/*.{ts,js,mjs}\" \"scripts/**/*.{ts,js,mjs}\" \"tests/**/*.{ts,js,mjs}\" \"docs/**/*.md\" \"*.{ts,js,mjs,json,yaml,yml}\"",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "bot": "node --env-file-if-exists=.env --import tsx apps/bot/src/main.ts",
+    "bot:demo": "node --env-file-if-exists=.env --import tsx apps/bot/src/main.ts demo",
+    "smoke:paper": "node scripts/smoke-paper.mjs",
+    "idle:paper": "node scripts/idle-paper.mjs",
+    "smoke:mcp": "node scripts/mcp-smoke.mjs"
+  },
+  "dependencies": {
+    "minecraft-data": "3.119.0",
+    "minecraft-mcp-server": "github:yuniko-software/minecraft-mcp-server#240c8cec337ce152cc9e058ebdef511055808406",
+    "mineflayer": "4.39.0",
+    "mineflayer-pathfinder": "2.4.5",
+    "pino": "10.4.0",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/sdk": "1.32.2",
+    "@types/node": "24.10.1",
+    "prettier": "3.6.2",
+    "tsx": "4.23.15",
+    "typescript": "5.9.3",
+    "vitest": "3.2.4"
+  }
+}
